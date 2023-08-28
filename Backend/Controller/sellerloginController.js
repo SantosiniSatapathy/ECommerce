@@ -1,4 +1,5 @@
-const seller = require('../models/seller.model')
+const db = require('../models/db')
+const seller = db.seller
 
 async function signup(req, res) {
     try {
