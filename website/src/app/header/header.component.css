@@ -1,0 +1,46 @@
+.nav{
+    display:flex;
+    justify-content:space-between
+}
+
+.nav h1{
+    margin:0;
+    color:blueviolet;
+    font-size:40px;
+    font-weight:bold
+}
+
+.nav ul{
+    display:inline-flex;
+    list-style-type: none;
+    margin:0;
+    padding:0
+}
+
+.nav li{
+    padding-left:15px;
+    padding-top:15px
+}
+
+.nav .nav-search input {
+    flex : 1 ;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    height:61px;
+    border-right:0px;
+}
+
+.nav .nav-search button {
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    height:61px;
+    border-left:0px;
+}
+
+.nav .nav-search{
+    margin-top:5px;
+    flex:1;
+    display:flex;
+    margin-left:5%;
+    margin-right:5%;
+}

@@ -1,0 +1,60 @@
+<div class="seller-auth" *ngIf="! showlogin">
+  <div class="sign-up">
+    <h1>Seller Sign Up</h1>
+
+    <form (ngSubmit)="signup(form.value)" #form="ngForm" class="common-form">
+      <input class="form-input" type="text" ngModel name="name" placeholder="Enter Name">
+      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password">
+      <input class="form-input" type="text" ngModel name="email" placeholder="Enter Email">
+      <button class="form-button">SignUp</button>
+    </form>
+
+    <div>
+     <a (click)="openForms('login')" style="cursor:pointer;"> Already Have Account ?  Login</a>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="login-auth" *ngIf="showlogin">
+  <div class="sign-up">
+    <h1>Seller Login</h1>
+
+    <form (ngSubmit)="login(loginForm.value)" #loginForm="ngForm" class="common-form">
+       <label for="email"></label>
+      <input class="form-input"  id="email" name="email" type="text"  ngModel  placeholder="Enter Email" required>
+      <div *ngIf="loginForm.controls.email?.touched && loginForm.controls.email?.errors?.required" class="error-message">
+        Username is required.
+      </div>
+
+      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password" required>
+      <div *ngIf="loginForm.controls.password?.touched && loginForm.controls.password?.errors?.required" class="error-message">
+        Passowrd is required.
+      </div>
+
+      <button class="form-button">Login</button>
+    </form>
+
+    <div>
+      <a (click)="openForms('signup')" style="cursor:pointer;">Don't Have Any Account ? Singup </a>
+     </div>
+
+  </div>
+
+
+
+
+</div>
+
+<!-- div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ngModel required email>
+        <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required" class="error-message">
+          Email is required.
+        </div>
+        <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email" class="error-message">
+          Invalid email format.
+        </div>
+      </div> -->
+
