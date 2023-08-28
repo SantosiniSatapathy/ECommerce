@@ -1,35 +1,26 @@
-const { DataTypes } = require('sequelize');
-const db = require('../db')
+module.exports = (sequelize, DataTypes) => {
 
-
-const Seller = db.define('Seller' , {
-    name: {
-        type:DataTypes.STRING
-    },
-    password:{
-        type:DataTypes.STRING
-    },
-    email: {
-        type:DataTypes.STRING
-    }
-},
-{
-
-})
-
-
-// async function initialize() {
-//     try {
-//       await db.sync(); // This will create the table based on the model
-
-//       console.log('Table created successfully.');
-//     } catch (error) {
-//       console.error('Unable to create the table:', error);
-//     }
-//   }
-
-//   initialize();
-
-
-
-module.exports = Seller
+    const Seller = sequelize.define('seller', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        name: {
+            type: DataTypes.STRING
+        },
+        password: {
+            type: DataTypes.STRING
+        },
+        email: {
+            type: DataTypes.STRING
+        },
+        type: { // seller or consumer
+            type: DataTypes.STRING
+        },
+        isDelete: { // delete status
+            type: DataTypes.BOOLEAN
+        }
+    })
+        return Seller;
+}
